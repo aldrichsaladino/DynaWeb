@@ -13,5 +13,6 @@ document.getElementById("baking").addEventListener("click", loadBaking)
 document.getElementById("coffee").addEventListener("click", loadCoffee)
 
 
+
 // default load
 loadHome();

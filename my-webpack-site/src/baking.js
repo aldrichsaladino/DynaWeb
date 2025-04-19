@@ -34,12 +34,12 @@ export function loadBaking () {
         image.src = section.imageSrc;
         image.alt = section.imageAlt;
         const sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('baking-section'); // Add a class for styling
+        
+        // Append the header, paragraph, and image to the sectionDiv
         sectionDiv.appendChild(header);
         sectionDiv.appendChild(paragraph);
         sectionDiv.appendChild(image);
         content.appendChild(sectionDiv);
     })
-
-
-
 }
