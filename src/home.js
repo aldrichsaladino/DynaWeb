@@ -2,27 +2,36 @@ export function loadHomePage (){
     const content = document.getElementById('content')
     content.innerHTML = "";
 
+    const brewOfTheMonth = document.createElement('div');
+    brewOfTheMonth.classList.add('brewMonth');
+    brewOfTheMonth.innerHTML = `
+        <h1>Brew of the Month</h1>
+        <p>Discover our featured brew of the month, handpicked for you!</p>
+        <img src="https://via.placeholder.com/150" alt="Brew of the Month">
+    `;
+    content.appendChild(brewOfTheMonth);
+
     const homeSections = [
         {
-            title: 'Home Section 1',
-            description: 'This is the first home section.',
+            title: 'Our Staple Roasts',
+            description: 'Explore our best roasts for any occasion.',
             imageUrl: 'https://via.placeholder.com/150',
         },
         {
-            title: 'Home Section 2',
-            description: 'This is the second home section.',
+            title: 'Bakery Anyone?',
+            description: 'Freshly made to kickstart your morning, or settle your way into the afternoon.',
             imageUrl: 'https://via.placeholder.com/150',
         },
         {
-            title: 'Home Section 3',
-            description: 'This is the third home section.',
+            title: 'Placeholder 3',
+            description: '.',
             imageUrl: 'https://via.placeholder.com/150',
         }
     ]
 
     homeSections.forEach(section => {
         const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('home-section');
+        sectionDiv.classList.add('homeSection');
 
         const title = document.createElement('h2');
         title.innerText = section.title;

@@ -22,7 +22,7 @@ export function loadCoffeePage () {
 
     coffeeSections.forEach(section => {
         const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('coffee-section');
+        sectionDiv.classList.add('coffeeSection');
 
         const title = document.createElement('h2');
         title.innerText = section.title;

@@ -26,7 +26,7 @@ export function loadBakeryPage() {
 
     bakerySections.forEach(section=> {
         const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('bakery-section');
+        sectionDiv.classList.add('bakerySection');
 
         const title = document.createElement('h2');
         title.innerText = section.title;
