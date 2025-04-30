@@ -1,0 +1,166 @@
+/* NAVIGATION BAR */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 1rem 0; /* Padding around the nav */
+    color: white; /* Text color */
+    position: fixed; /* Fix the navbar to the top */
+    width: 80%; /* Full width */
+    z-index: 10; /* Ensure it stays on top of other elements */
+    top: 0; /* Stick to the top of the viewport */
+
+}
+
+nav button { /* Select all buttons inside the nav element */
+    gap: 2rem;
+    background:transparent; /* Make the background transparent */
+    padding: 10px 20px;
+    top: 0; /* Stick to the top of the viewport */
+    border-color: transparent; /* Remove border color */
+    cursor: pointer; /* Change cursor to pointer */
+
+
+    /*additional css to enhance the navigation buttons*/
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav button :hover { /* Change color on hover */
+    background-color: white;
+    color: #a55000; /* Change color on hover */
+}
+
+
+/* NAVIGATION BAR LOGO */
+.logo {
+    position: relative;
+    width: 20rem;
+    height: 250px; /* Match your logo image height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfectly center the image */
+    width: 250px;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+  
+  .logo-default {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .logo-hover {
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .logo:hover .logo-hover {
+    opacity: 1;
+  }
+  
+  .logo:hover .logo-default {
+    opacity: 0;
+  }
+  
+  
+/* HERO SECTION */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93'); /* Replace with your preferred image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* HERO BUTTON */
+  .explore-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    background-color: #a55000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .explore-button:hover {
+    background-color: #8b4200;
+  }
+
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  
+  .card p {
+    padding: 0 1rem 1.5rem 1rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+
+  /* General Body Styles */
