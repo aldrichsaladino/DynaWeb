@@ -33,18 +33,18 @@ export function loadHomePage (){
 
     const homeSections = [
         {
-            title: 'Home Section 1',
-            description: 'This is the first home section.',
+            title: 'Our Staple Roasts',
+            description: 'Explore our best roasts for any occasion.',
             imageUrl: 'https://via.placeholder.com/150',
         },
         {
-            title: 'Home Section 2',
-            description: 'This is the second home section.',
+            title: 'Bakery Anyone?',
+            description: 'Freshly made to kickstart your morning, or settle your way into the afternoon.',
             imageUrl: 'https://via.placeholder.com/150',
         },
         {
-            title: 'Home Section 3',
-            description: 'This is the third home section.',
+            title: 'Placeholder 3',
+            description: '.',
             imageUrl: 'https://via.placeholder.com/150',
         }
     ]
