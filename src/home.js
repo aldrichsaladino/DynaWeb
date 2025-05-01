@@ -74,3 +74,30 @@ export function loadHomePage (){
     //Append the card container to the content div
     content.appendChild(cardContainer);
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navButtons = document.querySelector(".nav-buttons");
+  
+    hamburger.addEventListener("click", () => {
+      navButtons.classList.toggle("show");
+    });
+  
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 10) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+  
+    // Optional: close menu when clicking a nav item
+    document.querySelectorAll(".nav-buttons button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        navButtons.classList.remove("show");
+      });
+    });
+  });
+  
