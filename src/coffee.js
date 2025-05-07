@@ -1,46 +1,83 @@
 export function loadCoffeePage () {
     const content = document.getElementById('content')
     content.innerHTML = "";
+    content.classList.remove("home-hero"); // remove if coming from homepage
+    content.classList.add("coffee-hero");  // background image for coffee
+
+    //Need to add HERO section for coffee for background image
+    const hero = document.createElement('section');
+    hero.classList.add('section-hero');
+
+    const title = document.createElement('h1');
+    title.innerText = "Coffee & Tea";
+
+    const tagline = document.createElement('p');
+    tagline.innerText = "Our best brews, crafted to perfection";
+
+    hero.appendChild(title);
+    hero.appendChild(tagline);
+    content.appendChild(hero);
+
+
+    //Create a wrapper div for the coffee sections
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container', 'coffee-section');
 
     const coffeeSections = [
         {
-            title: 'Coffee Section 1',
-            description: 'This is the first coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
+            title: 'Sweet Hearth',
+            description: 'Brew of the Month • Honduras | Medium',
+            price: '12 oz | $17.95',
+            imageUrl: 'https://via.placeholder.com/300x300?text=Sweet+Hearth',
         },
         {
-            title: 'Coffee Section 2',
-            description: 'This is the second coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
+            title: 'Costa Rica',
+            description: 'Costa Rica | Medium',
+            price: '12 oz | $20.95',
+            imageUrl: 'https://via.placeholder.com/300x300?text=Costa+Rica',
         },
         {
-            title: 'Coffee Section 3',
-            description: 'This is the third coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
-        }
+            title: 'Velvet Blaze',
+            description: 'Blend | Medium',
+            price: '12 oz | $17.95',
+            imageUrl: 'https://via.placeholder.com/300x300?text=Velvet+Blaze',
+        },
     ]
 
     coffeeSections.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('coffeeSection');
+        const card = document.createElement('div');
+        card.classList.add('card', 'coffee-card'); // 👈 Add a modifier class
 
-        const title = document.createElement('h2');
-        title.innerText = section.title;
-
-        const description = document.createElement('p');
-        description.innerText = section.description;
 
         const image = document.createElement('img');
         image.src = section.imageUrl;
         image.alt = `${section.title} Image`;
 
-        sectionDiv.appendChild(title);
-        sectionDiv.appendChild(description);
-        sectionDiv.appendChild(image);
+        const title = document.createElement('h3');
+        title.innerText = section.title;
 
-        //append the section to the content div
-        content.appendChild(sectionDiv);
-    })
-    const coffeeSection = document.createElement('div');   
-    coffeeSection.classList.add('coffee-section');
+        const price = document.createElement('p');
+        price.innerText = section.price;
+        price.classList.add('price');
+
+        const description = document.createElement('p');
+        description.innerText = section.description;
+
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(price);
+        card.appendChild(description);
+
+        card.addEventListener('click', () => {
+            alert(`You clicked on ${section.title}`);
+        });
+        
+        card.style.cursor = 'pointer';
+        cardContainer.appendChild(card);
+        
+
+        cardContainer.appendChild(card);
+    });
+
+    content.appendChild(cardContainer);
 }

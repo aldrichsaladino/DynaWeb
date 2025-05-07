@@ -4,8 +4,8 @@ export function loadHomePage (){
 
     //Hero Section
     const hero = document.createElement('section');
-    hero.classList.add('hero');
-
+    hero.classList.add('section-hero', 'home-hero'); // background image for home
+    
     const heroTitle = document.createElement('h1');
     heroTitle.innerText = "Brewline Coffee Club"
 
