@@ -1,8 +1,8 @@
 export function loadCoffeePage () {
     const content = document.getElementById('content')
     content.innerHTML = "";
-    content.classList.remove("home-hero"); // remove if coming from homepage
-    content.classList.add("coffee-hero");  // background image for coffee
+    content.className = ''; // clear previous hero class
+    content.classList.add('coffee-hero');
 
     //Need to add HERO section for coffee for background image
     const hero = document.createElement('section');
