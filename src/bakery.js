@@ -25,19 +25,19 @@ export function loadBakeryPage() {
             title: 'Croissant',
             description: 'Flaky, buttery, and baked fresh every morning.',
             price: '$3.75',
-            imageUrl: 'https://via.placeholder.com/150',
+            imageUrl: 'https://images.unsplash.com/photo-1723532108634-4bacae8aef26?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
             title: 'Blueberry Muffin',
             description: 'Bursting with blueberries and just the right sweetness.',
             price: '$3.25',
-            imageUrl: 'https://via.placeholder.com/150',
+            imageUrl: 'https://images.unsplash.com/photo-1668095736406-7078568e66f7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVmZmluJTIwYW5kJTIwY29mZmVlfGVufDB8MHwwfHx8MA%3D%3D',
         },
         {
             title: 'Banana Bread',
             description: 'Moist, rich, and a cozy classic.',
             price: '$4.00',
-            imageUrl: 'https://via.placeholder.com/150',
+            imageUrl: 'https://images.unsplash.com/photo-1675712841671-cbcbe2c84103?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         }
     ];
 

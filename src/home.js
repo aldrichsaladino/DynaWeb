@@ -35,17 +35,17 @@ export function loadHomePage (){
         {
             title: 'Our Staple Roasts',
             description: 'Explore our best roasts for any occasion.',
-            imageUrl: 'https://via.placeholder.com/150',
+            imageUrl: 'https://images.unsplash.com/photo-1646325742177-21f298f470c6?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
             title: 'Bakery Anyone?',
             description: 'Freshly made to kickstart your morning, or settle your way into the afternoon.',
-            imageUrl: 'https://via.placeholder.com/150',
+            imageUrl: 'https://images.unsplash.com/photo-1745950099402-6fb5625d534b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         },
         {
-            title: 'Placeholder 3',
-            description: '.',
-            imageUrl: 'https://via.placeholder.com/150',
+            title: 'Locations',
+            description: 'Multiple locations to serve you better.',
+            imageUrl: 'https://images.unsplash.com/photo-1633524418541-4390f0fbeca9?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         }
     ]
 

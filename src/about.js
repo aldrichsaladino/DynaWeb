@@ -23,7 +23,7 @@ export function loadAboutPage() {
     paragraph.innerText = 'At Brewline Coffee Club, we believe in blending rich tradition with bold creativity. Our mission is to craft exceptional coffee experiences that bring people together — one cup at a time.';
   
     const image = document.createElement('img');
-    image.src = 'https://via.placeholder.com/300x200';
+    image.src = 'https://images.unsplash.com/photo-1461988366670-48e401bafb0a?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     image.alt = 'Our Coffee Story';
   
     const button = document.createElement('button');

@@ -1,12 +1,13 @@
-export function loadCoffeePage () {
-    const content = document.getElementById('content')
+export function loadCoffeePage() {
+    const content = document.getElementById('content');
     content.innerHTML = "";
-    content.className = ''; // clear previous hero class
-    content.classList.add('coffee-hero');
 
-    //Need to add HERO section for coffee for background image
+    // Clear previous hero styles from #content
+    content.className = '';
+
+    // Create the hero section with both base and coffee-specific classes
     const hero = document.createElement('section');
-    hero.classList.add('section-hero');
+    hero.classList.add('section-hero', 'coffee-hero');
 
     const title = document.createElement('h1');
     title.innerText = "Coffee & Tea";
@@ -18,8 +19,7 @@ export function loadCoffeePage () {
     hero.appendChild(tagline);
     content.appendChild(hero);
 
-
-    //Create a wrapper div for the coffee sections
+    // Create a wrapper div for the coffee sections
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('card-container', 'coffee-section');
 
@@ -28,26 +28,25 @@ export function loadCoffeePage () {
             title: 'Sweet Hearth',
             description: 'Brew of the Month • Honduras | Medium',
             price: '12 oz | $17.95',
-            imageUrl: 'https://via.placeholder.com/300x300?text=Sweet+Hearth',
+            imageUrl: 'https://images.unsplash.com/photo-1530496216518-a53d24e99c31?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
         },
         {
             title: 'Costa Rica',
             description: 'Costa Rica | Medium',
             price: '12 oz | $20.95',
-            imageUrl: 'https://via.placeholder.com/300x300?text=Costa+Rica',
+            imageUrl: 'https://images.unsplash.com/photo-1631639801103-980b04eef880?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
         },
         {
             title: 'Velvet Blaze',
             description: 'Blend | Medium',
             price: '12 oz | $17.95',
-            imageUrl: 'https://via.placeholder.com/300x300?text=Velvet+Blaze',
+            imageUrl: 'https://images.unsplash.com/photo-1488667499475-42a530fab02b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
         },
-    ]
+    ];
 
     coffeeSections.forEach(section => {
         const card = document.createElement('div');
-        card.classList.add('card', 'coffee-card'); // 👈 Add a modifier class
-
+        card.classList.add('card', 'coffee-card');
 
         const image = document.createElement('img');
         image.src = section.imageUrl;
@@ -68,15 +67,12 @@ export function loadCoffeePage () {
         card.appendChild(price);
         card.appendChild(description);
 
+        card.style.cursor = 'pointer';
         card.addEventListener('click', () => {
             alert(`You clicked on ${section.title}`);
         });
-        
-        card.style.cursor = 'pointer';
-        cardContainer.appendChild(card);
-        
 
-        cardContainer.appendChild(card);
+        cardContainer.appendChild(card); // ✅ Append only once
     });
 
     content.appendChild(cardContainer);
