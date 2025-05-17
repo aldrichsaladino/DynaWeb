@@ -2,246 +2,305 @@
    GLOBAL STYLES
 -------------------------------- */
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    box-sizing: border-box;
-  }
-  
-  /* -------------------------------
-     NAVIGATION BAR
-  -------------------------------- */
+  margin: 0;
+  font-family: 'Staatliches', sans-serif;
+  box-sizing: border-box;
+}
+
+/* -------------------------------
+   NAVIGATION BAR
+-------------------------------- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.logo {
+  position: relative;
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.logo-default {
+  opacity: 1;
+  z-index: 1;
+}
+
+.logo-hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+nav:hover .logo-hover,
+nav.scrolled .logo-hover {
+  opacity: 1;
+}
+nav:hover .logo-default,
+nav.scrolled .logo-default {
+  opacity: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-buttons button {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-family: 'Staatliches', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  color: #a55000;
+  background-color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+nav.scrolled,
+nav:hover {
+  background-color: white;
+}
+
+nav.scrolled .nav-buttons button,
+nav:hover .nav-buttons button,
+nav.scrolled .hamburger,
+nav:hover .hamburger {
+  color: #4a2d18;
+}
+
+/* -------------------------------
+   RESPONSIVE NAVIGATION
+-------------------------------- */
+@media (max-width: 768px) {
   nav {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 3rem 2rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    background: transparent;
-    transition: background-color 0.3s ease;
-    color: white;
   }
-  
+
   .logo {
-    position: relative;
-    width: 250px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    order: 2;
     margin: 0 auto;
-    flex-shrink: 0;
   }
-  
-  .logo img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: auto;
-    transition: opacity 0.3s ease;
-  }
-  
-  .logo-default {
-    opacity: 1;
-    z-index: 1;
-  }
-  
-  .logo-hover {
-    opacity: 0;
-    z-index: 2;
-  }
-  
-  nav:hover .logo-hover,
-  nav.scrolled .logo-hover {
-    opacity: 1;
-  }
-  nav:hover .logo-default,
-  nav.scrolled .logo-default {
-    opacity: 0;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex: 1;
-  }
-  
-  .nav-buttons button {
-    background: transparent;
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    font-family: 'Staatliches', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 1.2rem;
-    transition: color 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .nav-buttons button:hover {
-    color: #a55000;
-    background-color: white;
-  }
-  
+
   .hamburger {
+    display: block;
+    order: 1;
+  }
+
+  .nav-buttons {
     display: none;
-    font-size: 2rem;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .nav-buttons.show {
+    display: flex;
+  }
+
+  .nav-buttons button {
+    color: #a55000;
     background: none;
     border: none;
-    cursor: pointer;
-    color: white;
-  }
-  
-  nav.scrolled,
-  nav:hover {
-    background-color: white;
-  }
-  
-  nav.scrolled .nav-buttons button,
-  nav:hover .nav-buttons button,
-  nav.scrolled .hamburger,
-  nav:hover .hamburger {
-    color: #4a2d18;
-  }
-  
-  /* -------------------------------
-     RESPONSIVE NAVIGATION
-  -------------------------------- */
-  @media (max-width: 768px) {
-    nav {
-      justify-content: space-between;
-    }
-  
-    .logo {
-      order: 2;
-      margin: 0 auto;
-    }
-  
-    .hamburger {
-      display: block;
-      order: 1;
-    }
-  
-    .nav-buttons {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-  
-    .nav-buttons.show {
-      display: flex;
-    }
-  
-    .nav-buttons button {
-      color: #a55000;
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      padding: 1rem;
-    }
-  }
-  
-  /* -------------------------------
-     HERO SECTION
-  -------------------------------- */
-  .hero {
-    background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .explore-button {
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    background-color: #a55000;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .explore-button:hover {
-    background-color: #8b4200;
-  }
-  
-  /* -------------------------------
-     CARD SECTION
-  -------------------------------- */
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .card h3 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    margin: 1rem 0 0.5rem 0;
+    padding: 1rem;
   }
-  
-  .card p {
-    padding: 0 1rem 1.5rem 1rem;
-    font-size: 1rem;
-    color: #555;
-  }
-  
+}
+
+/* -------------------------------
+   SHARED HERO SECTION BASE
+-------------------------------- */
+.section-hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* -------------------------------
+   HERO BACKGROUNDS PER SECTION
+-------------------------------- */
+.home-hero {
+  background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+  background-size: cover;
+  background-position: center;
+}
+.coffee-hero {
+  background-image: url('https://images.unsplash.com/photo-1537130508299-46ab547b4be3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+}
+
+.bakery-hero {
+  background-image: url('https://images.unsplash.com/photo-1568254183919-78a4f43a2877?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+}
+.about-hero {
+  background-image: url('https://images.unsplash.com/photo-1511988617509-a57c8a288659');
+  background-size: cover;
+  background-position: center;
+}
+
+/* -------------------------------
+   HERO TEXT STYLE
+-------------------------------- */
+.section-hero h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.section-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.explore-button {
+  padding: 0.75rem 2rem;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1rem;
+  background-color: #a55000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.explore-button:hover {
+  background-color: #8b4200;
+}
+
+/* -------------------------------
+   CARD CONTAINER (shared styles)
+-------------------------------- */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -------------------------------
+   CARD BASE STYLE
+-------------------------------- */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding-bottom: 1rem;
+}
+.card:hover { transform: translateY(-5px); }
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+.card h3 {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+.card .price {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+.card p {
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* -------------------------------
+   COFFEE SECTION MODIFIERS
+-------------------------------- */
+.coffee-section { background-color: #fffaf5; border-radius: 8px; }
+.coffee-card h3 { color: #4b2e17; }
+.coffee-card .price { color: #a55000; }
+
+/* -------------------------------
+   BAKERY SECTION MODIFIERS
+-------------------------------- */
+.bakery-section { background-color: #fff9f2; border-radius: 8px; }
+.bakery-card h3 { color: #b45f06; }
+.bakery-card .price { color: #a36f1a; }
+
+/* -------------------------------
+   ABOUT SECTION MODIFIERS
+-------------------------------- */
+.about-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fffefc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.about-container img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem 0;
+}

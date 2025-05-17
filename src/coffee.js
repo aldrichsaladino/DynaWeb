@@ -1,46 +1,79 @@
-export function loadCoffeePage () {
-    const content = document.getElementById('content')
+export function loadCoffeePage() {
+    const content = document.getElementById('content');
     content.innerHTML = "";
+
+    // Clear previous hero styles from #content
+    content.className = '';
+
+    // Create the hero section with both base and coffee-specific classes
+    const hero = document.createElement('section');
+    hero.classList.add('section-hero', 'coffee-hero');
+
+    const title = document.createElement('h1');
+    title.innerText = "Coffee & Tea";
+
+    const tagline = document.createElement('p');
+    tagline.innerText = "Our best brews, crafted to perfection";
+
+    hero.appendChild(title);
+    hero.appendChild(tagline);
+    content.appendChild(hero);
+
+    // Create a wrapper div for the coffee sections
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('card-container', 'coffee-section');
 
     const coffeeSections = [
         {
-            title: 'Coffee Section 1',
-            description: 'This is the first coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
+            title: 'Sweet Hearth',
+            description: 'Brew of the Month • Honduras | Medium',
+            price: '12 oz | $17.95',
+            imageUrl: 'https://images.unsplash.com/photo-1530496216518-a53d24e99c31?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
         },
         {
-            title: 'Coffee Section 2',
-            description: 'This is the second coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
+            title: 'Costa Rica',
+            description: 'Costa Rica | Medium',
+            price: '12 oz | $20.95',
+            imageUrl: 'https://images.unsplash.com/photo-1631639801103-980b04eef880?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
         },
         {
-            title: 'Coffee Section 3',
-            description: 'This is the third coffee section.',
-            imageUrl: 'https://via.placeholder.com/150',
-        }
-    ]
+            title: 'Velvet Blaze',
+            description: 'Blend | Medium',
+            price: '12 oz | $17.95',
+            imageUrl: 'https://images.unsplash.com/photo-1488667499475-42a530fab02b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // 🔁 Updated
+        },
+    ];
 
     coffeeSections.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('coffeeSection');
-
-        const title = document.createElement('h2');
-        title.innerText = section.title;
-
-        const description = document.createElement('p');
-        description.innerText = section.description;
+        const card = document.createElement('div');
+        card.classList.add('card', 'coffee-card');
 
         const image = document.createElement('img');
         image.src = section.imageUrl;
         image.alt = `${section.title} Image`;
 
-        sectionDiv.appendChild(title);
-        sectionDiv.appendChild(description);
-        sectionDiv.appendChild(image);
+        const title = document.createElement('h3');
+        title.innerText = section.title;
 
-        //append the section to the content div
-        content.appendChild(sectionDiv);
-    })
-    const coffeeSection = document.createElement('div');   
-    coffeeSection.classList.add('coffee-section');
+        const price = document.createElement('p');
+        price.innerText = section.price;
+        price.classList.add('price');
+
+        const description = document.createElement('p');
+        description.innerText = section.description;
+
+        card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(price);
+        card.appendChild(description);
+
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            alert(`You clicked on ${section.title}`);
+        });
+
+        cardContainer.appendChild(card); // ✅ Append only once
+    });
+
+    content.appendChild(cardContainer);
 }
