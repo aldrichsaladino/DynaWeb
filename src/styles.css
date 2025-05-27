@@ -22,6 +22,7 @@ nav {
   background: transparent;
   transition: background-color 0.3s ease;
   color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Optional: adds contrast */
 }
 
 .logo {
@@ -140,6 +141,7 @@ nav:hover .hamburger {
     background: white;
     padding: 1rem 0;
     text-align: center;
+    
   }
 
   .nav-buttons.show {
@@ -169,6 +171,7 @@ nav:hover .hamburger {
   color: white;
   padding: 2rem;
   box-sizing: border-box;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Optional: adds contrast */
 }
 
 /* -------------------------------
@@ -195,6 +198,13 @@ nav:hover .hamburger {
   background-size: cover;
   background-position: center;
 }
+
+.about-hero h1,
+.about-hero p {
+  color: #ffffff; /* Bright white */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Optional: adds contrast */
+}
+
 
 /* -------------------------------
    HERO TEXT STYLE
@@ -290,17 +300,46 @@ nav:hover .hamburger {
    ABOUT SECTION MODIFIERS
 -------------------------------- */
 .about-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 4rem auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 3rem 2rem;
   background-color: #fffefc;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 700px;
+}
+
 .about-container img {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
-  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.about-container button {
+  padding: 0.75rem 2rem;
+  font-family: 'Staatliches', sans-serif;
+  font-size: 1rem;
+  background-color: #a55000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-container button:hover {
+  background-color: #8b4200;
 }
