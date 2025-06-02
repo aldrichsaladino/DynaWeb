@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: 'Staatliches', sans-serif;
   box-sizing: border-box;
+  background-color: #fffaf5; 
 }
 
 /* -------------------------------
@@ -255,6 +256,7 @@ nav:hover .hamburger {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 /* -------------------------------
@@ -276,6 +278,8 @@ nav:hover .hamburger {
   width: 100%;
   height: auto;
   border-bottom: 1px solid #eee;
+  height: 200px;
+  object-fit: cover;
 }
 .card h3 {
   font-family: 'Staatliches', sans-serif;
@@ -296,14 +300,14 @@ nav:hover .hamburger {
 /* -------------------------------
    COFFEE SECTION MODIFIERS
 -------------------------------- */
-.coffee-section { background-color: #fffaf5; border-radius: 8px; }
+/*.coffee-section { background-color: #fffaf5; border-radius: 8px; }*/
 .coffee-card h3 { color: #4b2e17; }
 .coffee-card .price { color: #a55000; }
 
 /* -------------------------------
    BAKERY SECTION MODIFIERS
 -------------------------------- */
-.bakery-section { background-color: #fff9f2; border-radius: 8px; }
+/*.bakery-section { background-color: #fff9f2; border-radius: 8px; }*/
 .bakery-card h3 { color: #b45f06; }
 .bakery-card .price { color: #a36f1a; }
 
